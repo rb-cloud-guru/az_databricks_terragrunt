@@ -4,7 +4,7 @@ output "app_pwd" {
     sensitive = true
 }
 
-output "client_id" {
+output "app_client_id" {
     value = azuread_service_principal.spn.id
     sensitive = true
 }
