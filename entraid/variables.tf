@@ -25,5 +25,5 @@ variable "role_def_name" {
 
 #storage account id
 variable "storage_acct_id" {
-    description = "storage account id"
+    description = "storage acct id"
 }

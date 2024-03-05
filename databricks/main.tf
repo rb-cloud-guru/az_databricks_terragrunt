@@ -8,6 +8,11 @@ provider "azurerm" {
 	features {}  
 }
 
+#provider databricks
+provider "databricks" {
+    host = azurerm_databricks_workspace.dbricks_wkspace.workspace_url
+}
+
 #create databricks workspace
 resource "azurerm_databricks_workspace" "dbricks_wkspace" {
   name                = var.dbricks_wkspace_name
@@ -48,7 +53,7 @@ resource "databricks_secret_scope" "dbricks_scope" {
 resource "databricks_cluster" "dbricks_cluster" {
   cluster_name            = var.dbricks_cluster_name
   spark_version           = data.databricks_spark_version.latest.id # Other possible values ("13.3.x-scala2.12", "11.2.x-cpu-ml-scala2.12", "7.0.x-scala2.12")
-  node_type_id            = data.databricks_node_type.smallest.id # Other possible values ("Standard_F4", "Standard_DS3_v2")
+  node_type_id            = "Standard_DS3_v2" # Other possible values ("Standard_F4", "Standard_DS3_v2")
   autotermination_minutes = 20
   depends_on              = [ databricks_secret_scope.dbricks_scope ]
   autoscale {

@@ -25,6 +25,5 @@ dependency storage-account {
 
 #inputs
 inputs = {
-    storage_acct_id = dependency.storage-account.outputs.storage_account_id
-    
+    storage_acct_id = dependency.storage-account.outputs.storage_account_id  
 }
