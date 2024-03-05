@@ -1,4 +1,5 @@
-!\[my badge\](https://badgen.net/badge/azurerm3.94.0/databricks1.5.0)
+
+<a>![badge-alt-text](https://badgen.net/badge/azurerm3.94.0/databricks1.5.0)</a>
 
 # Azure databricks Terragrunt 
 
